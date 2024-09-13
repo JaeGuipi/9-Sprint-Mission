@@ -1,18 +1,18 @@
-import "./App.css";
-import "./global.css";
-import pandaLogo from "./panda-market-logo.png";
-import userIcon from "./svg/userIcon.svg";
-import UsedMarket from "./compornents/UsedMarket";
-import CommunityBoard from "./compornents/CommunityBoard";
-import Additem from "./compornents/Additem";
-import ProductDetail from "./compornents/ProductDetail.container";
+import './App.css';
+import './global.css';
+import pandaLogo from './panda-market-logo.png';
+import userIcon from './svg/userIcon.svg';
+import UsedMarket from './compornents/UsedMarket';
+import CommunityBoard from './compornents/CommunityBoard';
+import Additem from './compornents/Additem';
+import ProductDetail from './compornents/ProductDetail.container';
 import {
   Link,
   Route,
   BrowserRouter as Router,
   Routes,
   useLocation,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 function App() {
   return (
@@ -37,18 +37,18 @@ function AppHeader() {
 
   const menuItems = [
     {
-      path: "/communityBoard",
-      label: "자유게시판",
+      path: '/communityBoard',
+      label: '자유게시판',
     },
     {
-      path: "/items",
-      label: "중고마켓",
+      path: '/items',
+      label: '중고마켓',
     },
   ];
 
-  const isActive = (path) => {
-    if (path === "/items") {
-      return location.pathname === "/items" || location.pathname === "/additem";
+  const isActive = (path: string) => {
+    if (path === '/items') {
+      return location.pathname === '/items' || location.pathname === '/additem';
     }
     return location.pathname === path;
   };
@@ -63,7 +63,7 @@ function AppHeader() {
           <Link
             key={item.path}
             to={item.path}
-            className={`menu ${isActive(item.path) ? "active" : ""}`}
+            className={`menu ${isActive(item.path) ? 'active' : ''}`}
           >
             {item.label}
           </Link>
